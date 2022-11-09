@@ -1,5 +1,86 @@
 .container {
-  padding: 0 2rem;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  background-color: #222;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+
+}
+
+.section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+.experience {
+  height: 100%;
+  width: 100%;
+  background-color: #CCC;
+}
+
+.morphing {
+  position: relative;
+  color: #FFF;
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+  filter: contrast(25) blur(1px);
+  min-height: 100vh;
+}
+
+.word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: word 20s infinite ease-in-out;
+}
+
+.word:nth-child(1) {
+  animation-delay: -20s;
+}
+
+.word:nth-child(2) {
+  animation-delay: -16s;
+}
+
+.word:nth-child(3) {
+  animation-delay: -12s;
+}
+
+.word:nth-child(4) {
+  animation-delay: -8s;
+}
+
+.word:nth-child(5) {
+  animation-delay: -4s;
+}
+
+
+@keyframes word {
+  0%, 5%, 100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  20%, 80% {
+    filter: blur(1em);
+    opacity: 0;
+  }
+}
+
+.title {
+  color: #FFF;
+  transition: 200ms color;
+}
+
+.title:hover {
+  color: #FFF;
 }
 
 .main {
